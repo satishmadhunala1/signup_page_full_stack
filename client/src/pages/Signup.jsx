@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import {  toast } from "react-toastify";
 
 const Signup = () => {
     const [formData, setFormData] = useState({ name: "", email: "", password: "" });
@@ -82,7 +81,6 @@ const handleSubmit = async (e) => {
                         Login
                     </button>
                 </p>
-                <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} newestOnTop closeOnClick pauseOnHover draggable />
             </div>
         </div>
     );

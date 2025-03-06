@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 const Home = () => {
     const navigate = useNavigate();
@@ -23,7 +22,6 @@ const Home = () => {
             >
                 Logout
             </button>
-            <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} newestOnTop closeOnClick pauseOnHover draggable />
         </div>
     );
 };

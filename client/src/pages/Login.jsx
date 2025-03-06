@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 const Login = () => {
     const [formData, setFormData] = useState({ email: "", password: "" });
@@ -62,7 +61,6 @@ const handleSubmit = async (e) => {
                         Login
                     </button>
                 </form>
-                <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} newestOnTop closeOnClick pauseOnHover draggable />
 
 
                 <p className="text-center text-sm mt-4">
