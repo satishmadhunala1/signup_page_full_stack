@@ -18,7 +18,7 @@ const handleSubmit = async (e) => {
     setError("");
 
     try {
-        const response = await axios.post("http://localhost:3000/auth/signup", formData);
+        const response = await axios.post("http://signup-page-full-stack-backend.onrender.com/auth/signup", formData);
         
         toast.success("Signup successful! Please login.");
         setTimeout(() => navigate("/login"), 2000);
