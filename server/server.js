@@ -16,6 +16,10 @@ app.use(express.json())
 app.use(cors())
 app.use("/auth", Authrouter)
 
+app.get("/",(req,res)=>{
+    res.send("Welcome to my server")
+});
+
 connectDb();
 
 app.listen(PORT,()=>{
