@@ -13,12 +13,14 @@ const Signup = () => {
     };
 
 
+    const API_BASE_URL = "http://localhost:3000";
+
 const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
 
     try {
-        const response = await axios.post("http://signup-page-full-stack-backend.onrender.com/auth/signup", formData);
+        const response = await axios.post(`${API_BASE_URL}/auth/login`, formData);
         
         toast.success("Signup successful! Please login.");
         setTimeout(() => navigate("/login"), 2000);

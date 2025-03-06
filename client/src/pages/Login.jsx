@@ -12,22 +12,24 @@ const Login = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    const API_BASE_URL = "http://localhost:3000";
 
-const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError("");
 
-    try {
-        const { data } = await axios.post("http://signup-page-full-stack-backend.onrender.com/auth/login", formData);
-        console.log(data);
-        toast.success("Login successful! 🎉");
-        setTimeout(() => navigate("/home"), 1500);
-    } catch (err) {
-        setError(err.response?.data?.error || "Login failed");
-        toast.error(err.response?.data?.error || "Login failed");
-    }
-};
+        try {
+            const { data } = await axios.post(`${API_BASE_URL}/auth/login`, formData);
+            console.log("Login Response:", data);
+            toast.success("Login successful! 🎉");
 
+            setTimeout(() => navigate("/home"), 1500);
+        } catch (err) {
+            const errorMsg = err.response?.data?.error || "Login failed";
+            setError(errorMsg);
+            toast.error(errorMsg);
+        }
+    };
 
     return (
         <div className="flex justify-center items-center h-screen bg-gray-300">
@@ -61,7 +63,6 @@ const handleSubmit = async (e) => {
                         Login
                     </button>
                 </form>
-
 
                 <p className="text-center text-sm mt-4">
                     Don't have an account?{" "}
