@@ -20,7 +20,7 @@ const handleSubmit = async (e) => {
     setError("");
 
     try {
-        const response = await axios.post(`${API_BASE_URL}/auth/login`, formData);
+        const response = await axios.post(`${API_BASE_URL}/auth/signup`, formData);
         
         toast.success("Signup successful! Please login.");
         setTimeout(() => navigate("/login"), 2000);
